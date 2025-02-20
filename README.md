@@ -1,6 +1,4 @@
 
-
-```markdown
 # Finance Chatbot: Sentiment Analysis & Investment Advisor 💼🤖
 
 ![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue)

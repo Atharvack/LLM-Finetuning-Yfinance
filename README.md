@@ -121,3 +121,4 @@ MIT License - See [LICENSE](LICENSE) for details
 Check repo [here](https://github.com/Atharvack/LLM-Finetuning-Yfinance/blob/main/fine_tuning_inference.ipynb)
 
 
+Try out the LLM on Huggingface [here][https://huggingface.co/spaces/Rashtardeep/Finance-llm]

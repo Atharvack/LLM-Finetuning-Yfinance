@@ -70,23 +70,32 @@ def main():
     print(f"Assistant: {extract_response(response)}")
 ```
 
-##  System Architecture
-
-```mermaid
+## 📊 System Architecture
+<div class="mermaid">
 graph TD
-A[User Input] --> B(Data Collection Module)
-B --> C{yFinance API}
-B --> D{NewsAPI}
-C --> E[Real-time Metrics]
-D --> F[News Context]
-E --> G[LLaMA-3 Processor]
-F --> G
-G --> H[Sentiment Analysis]
-G --> I[Investment Advice]
-H --> J[Response Generation]
-I --> J
-J --> K[Output]
-```
+    A[User Input] --> B[Data Collection Module]
+    B --> C[yFinance API]
+    B --> D[NewsAPI]
+    C --> E[Real-time Metrics]
+    D --> F[News Context]
+    E --> G[LLaMA-3 Processor]
+    F --> G
+    G --> H[Sentiment Analysis]
+    G --> I[Investment Advice]
+    H --> J[Response Generation]
+    I --> J
+    J --> K[Output]
+</div>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: 'dark',
+    securityLevel: 'loose'
+  });
+</script>
+
 
 ##  Dataset
 - **QA_plus_sentiment_12k.csv** containing:

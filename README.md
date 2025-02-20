@@ -6,11 +6,6 @@
 ![Framework](https://img.shields.io/badge/Framework-Unsloth-important)
 
 **Author**: Atharva Kulkarni
-  
-
-<div align="center">
-  <img src="https://via.placeholder.com/800x400?text=Financial+Chatbot+Architecture" alt="System Architecture">
-</div>
 
 ## 🌟 Key Features
 - **Sentiment Analysis** of financial news/text using fine-tuned LLaMA-3
@@ -30,71 +25,53 @@
 | Deployment              | Transformers, PEFT                  |
 
 ## 📦 Installation
-```
-
-
+```bash
 # Clone repository
-
-git clone https://github.com/Atharvack/finance-chatbot.git
+git clone https://github.com/Atharvack/LLM-Finetuning-Yfinance.git
 cd finance-chatbot
 
-# Install dependencies
-
-pip install -r requirements.txt
-
 # Additional setup
-
 pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
 pip install --no-deps xformers trl peft accelerate bitsandbytes
-
 ```
 
 ## 🚀 Usage
 ### Fine-tuning Process
-```
-
+```python
 from unsloth import FastLanguageModel
 
 # Initialize model with LoRA
-
 model, tokenizer = FastLanguageModel.from_pretrained(
-model_name = "meta-llama/Meta-Llama-3-8B-Instruct",
-max_seq_length = 1024,
-load_in_4bit = True,
-token = "your_hf_token"
+  model_name="meta-llama/Meta-Llama-3-8B-Instruct",
+  max_seq_length=1024,
+  load_in_4bit=True,
+  token="your_hf_token"
 )
 
 # Start training
-
 trainer = SFTTrainer(
-model = model,
-train_dataset = dataset,
-dataset_text_field = "text",
-max_seq_length = 1024,
-\# ... additional config
+  model=model,
+  train_dataset=dataset,
+  dataset_text_field="text",
+  max_seq_length=1024,
+  # ... additional config
 )
 trainer.train()
-
 ```
 
 ### Real-time Inference
-```
-
-
+```python
 # Initialize chatbot interface
-
 def main():
-context = build_context()  \# Collects real-time data
-while True:
-question = input("Ask financial question: ")
-response = inference(question, context)
-print(f"Assistant: {extract_response(response)}")
-
+  context = build_context()  # Collects real-time data
+  while True:
+    question = input("Ask financial question: ")
+    response = inference(question, context)
+    print(f"Assistant: {extract_response(response)}")
 ```
 
 ## 📊 System Architecture
-```
-
+```mermaid
 graph TD
 A[User Input] --> B(Data Collection Module)
 B --> C{yFinance API}
@@ -108,7 +85,6 @@ G --> I[Investment Advice]
 H --> J[Response Generation]
 I --> J
 J --> K[Output]
-
 ```
 
 ## 📚 Dataset
@@ -129,9 +105,6 @@ MIT License - See [LICENSE](LICENSE) for details
 ---
 
 **Disclaimer**: This project is for educational purposes only. Never make actual financial decisions based on AI outputs without consulting qualified professionals.
-```
-
-
 
 ## Jupyter Notebooks
 
@@ -139,8 +112,9 @@ MIT License - See [LICENSE](LICENSE) for details
 
 <script>
   fetch('fine_tuning_inference.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('notebook-content').innerHTML = data;
-    });
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('notebook-content').innerHTML = data;
+  });
 </script>
+

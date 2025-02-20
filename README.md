@@ -1,20 +1,18 @@
 
-# Finance Chatbot: Sentiment Analysis & Investment Advisor 💼🤖
+# Finance Chatbot: Sentiment Analysis & Investment Advisor 
 
-![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Framework](https://img.shields.io/badge/Framework-Unsloth-important)
+
 
 **Author**: Atharva Kulkarni
 
-## 🌟 Key Features
+## Key Features
 - **Sentiment Analysis** of financial news/text using fine-tuned LLaMA-3
 - **Investment Recommendations** with real-time stock metrics integration
 - **Financial Q&A** system with contextual understanding
 - **LoRA-optimized** fine-tuning for efficient adaptation
 - Real-time data integration with Yahoo Finance & NewsAPI
 
-## 🛠 Technical Stack
+## Technical Stack
 | Component               | Technology                          |
 |-------------------------|-------------------------------------|
 | Base Model              | Meta-Llama-3-8B-Instruct            |
@@ -24,7 +22,7 @@
 | Real-time Data          | yfinance, NewsAPI                   |
 | Deployment              | Transformers, PEFT                  |
 
-## 📦 Installation
+## Installation
 ```bash
 # Clone repository
 git clone https://github.com/Atharvack/LLM-Finetuning-Yfinance.git
@@ -35,8 +33,9 @@ pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
 pip install --no-deps xformers trl peft accelerate bitsandbytes
 ```
 
-## 🚀 Usage
+##  Usage
 ### Fine-tuning Process
+
 ```python
 from unsloth import FastLanguageModel
 
@@ -60,6 +59,7 @@ trainer.train()
 ```
 
 ### Real-time Inference
+
 ```python
 # Initialize chatbot interface
 def main():
@@ -70,7 +70,8 @@ def main():
     print(f"Assistant: {extract_response(response)}")
 ```
 
-## 📊 System Architecture
+##  System Architecture
+
 ```mermaid
 graph TD
 A[User Input] --> B(Data Collection Module)
@@ -87,19 +88,19 @@ I --> J
 J --> K[Output]
 ```
 
-## 📚 Dataset
+##  Dataset
 - **QA_plus_sentiment_12k.csv** containing:
   - Financial questions
   - Contextual information
   - Annotated answers
   - Sentiment labels
 
-## 🔧 Configuration
+## Configuration
 1. Obtain [Hugging Face Token](https://huggingface.co/settings/tokens)
 2. Get [NewsAPI Key](https://newsapi.org/register)
 3. Update `hf_token` and `api_key` in code
 
-## 📜 License
+## License
 MIT License - See [LICENSE](LICENSE) for details
 
 ---

@@ -109,13 +109,6 @@ MIT License - See [LICENSE](LICENSE) for details
 
 ## Jupyter Notebooks
 
-<div id="notebook-content"></div>
+Check repo [here](https://github.com/Atharvack/LLM-Finetuning-Yfinance/blob/main/fine_tuning_inference.ipynb)
 
-<script>
-  fetch('fine_tuning_inference.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('notebook-content').innerHTML = data;
-  });
-</script>
 
